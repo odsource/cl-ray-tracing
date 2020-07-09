@@ -11,7 +11,9 @@ find_library(CL OpenCL PATHS "${ROCM_OPENCL}lib/" REQUIRED)
 
 include_directories(include "${ROCM_OPENCL}include/")
 
-add_executable(${CMAKE_PROJECT_NAME} src/main.c)
+add_executable(${CMAKE_PROJECT_NAME} src/main.c
+        src/engine.c
+        src/util.c)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} GL
         glfw
